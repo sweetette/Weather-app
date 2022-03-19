@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Weather app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <input type="city" id="city-input" placeholder="Search city" />
+        <input type="submit" value="Search" />
+      </form>
+      <button>Current location</button>
+      <h1 class="border rounded shadow"></h1>
+      <h2></h2>
+
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-2" id="current-temperature">
+          <strong>&#176;C</strong>
+        </div>
+        <div class="col-7">
+          Cloudy with periods of light rain.
+          <br />
+          High 4&#176;C. <br />Winds 21 km/h. <br />Chance of rain 60%. <br />
+          Humidity 86%.
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="row days">
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">Monday</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">Tuesday</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">Wednesday</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">Thursday</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">Friday</div>
+          </div>
+        </div>
+      </div>
+      <br />
+       </span>
+    <a href="https://en.wikipedia.org/wiki/Chocolate"><em>Source</em></a>
+      <span> by Henriette Julie Hansen</span>
+  
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

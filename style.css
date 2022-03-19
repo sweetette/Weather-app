@@ -1,0 +1,27 @@
+h1 {
+  position: relative;
+  top: 40px;
+  text-align: center;
+  padding: 20px;
+  margin-inline-start: 1em;
+  margin-inline-end: 1em;
+}
+h2 {
+  text-align: center;
+  padding: 40px;
+}
+form {
+  display: block;
+  text-align: left;
+  padding-top: 10px;
+}
+
+.col-7 {
+  font-size: smaller;
+  text-align: left;
+}
+.row {
+  position: relative;
+  top: 0px;
+  text-align: center;
+}
