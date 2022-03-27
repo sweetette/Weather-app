@@ -62,6 +62,10 @@ li:first-letter {
   border-radius: 5px;
 }
 
+.fahrenheit {
+  text-decoration: none;
+}
+
 .active {
   color: black;
   cursor: default;
