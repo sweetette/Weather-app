@@ -84,4 +84,19 @@ function showWeatherDescription(response) {
     "#weather-description"
   );
   weatherDescriptionElement.innerHTML = `${currentWeather} `;
+  let cityInput = document.querySelector("#city-input");
+  let cityInputValue = cityInput.value;
+  let apiKey = "bbf5aa093fafae6856eb12399cd15947";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}`;
+  axios.get(apiUrl).then(showIcon);
+}
+
+///
+function showIcon(response) {
+  let icon = response.data.weather[0].icon;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon}@2x.png`
+  );
 }
