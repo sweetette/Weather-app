@@ -16,68 +16,69 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form>
-          <input type="city" id="city-input" placeholder="Search city" />
-          <input type="submit" value="Search" />
-        </form>
-        <button>Current location</button>
-        <h1 class="border rounded shadow"></h1>
-        <h2></h2>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form>
+            <input type="city" id="city-input" placeholder="Search city" />
+            <input type="submit" value="Search" />
+          </form>
+          <button>Current location</button>
+          <h1 class="border rounded shadow"></h1>
+          <h2></h2>
 
-        <div class="row">
-          <div class="col-3"></div>
-          <div class="col-2" id="current-temperature">
-            <strong>&#176;C</strong>
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-2" id="current-temperature">
+              <strong>&#176;C</strong>
+            </div>
+            <div class="col-7">
+              Cloudy with periods of light rain.
+              <br />
+              <ul>
+                <li>High 4&#176;C</li>
+                <li>Winds 21 km/h</li>
+                <li>Chance of rain 60%</li>
+                <li>Humidity 86%</li>
+              </ul>
+            </div>
           </div>
-          <div class="col-7">
-            Cloudy with periods of light rain.
-            <br />
-            <ul>
-              <li>High 4&#176;C</li>
-              <li>Winds 21 km/h</li>
-              <li>Chance of rain 60%</li>
-              <li>Humidity 86%</li>
-            </ul>
+          <br />
+          <br />
+          <div class="row days">
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">Monday</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">Tuesday</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">Wednesday</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">Thursday</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="card">
+                <div class="card-body">Friday</div>
+              </div>
+            </div>
           </div>
         </div>
-        <br />
-        <br />
-        <div class="row days">
-          <div class="col-2">
-            <div class="card">
-              <div class="card-body">Monday</div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="card">
-              <div class="card-body">Tuesday</div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="card">
-              <div class="card-body">Wednesday</div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="card">
-              <div class="card-body">Thursday</div>
-            </div>
-          </div>
-          <div class="col-2">
-            <div class="card">
-              <div class="card-body">Friday</div>
-            </div>
-          </div>
-        </div>
+        <small>
+          <a href="https://github.com/sweetette/Weather-app" target="_blank"
+            >Open-source code</a
+          >
+          by Henriette Julie Hansen
+        </small>
       </div>
-      <br />
-      <small>
-        <a href="https://github.com/sweetette/Weather-app" target="_blank"
-          >Open-source code</a
-        >
-        by Henriette Julie Hansen
-      </small>
     </div>
     <script src="src/index.js"></script>
   </body>
