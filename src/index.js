@@ -45,7 +45,7 @@ submitForm.addEventListener("submit", search);
 function showTemperature(response) {
   let currentTemperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = `${currentTemperature}˚C`;
+  temperatureElement.innerHTML = `${currentTemperature}`;
   let cityInput = document.querySelector("#city-input");
   let cityInputValue = cityInput.value;
   let apiKey = "bbf5aa093fafae6856eb12399cd15947";
