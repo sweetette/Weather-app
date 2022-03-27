@@ -51,6 +51,8 @@ function showTemperature(response) {
   let apiKey = "bbf5aa093fafae6856eb12399cd15947";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}`;
   axios.get(apiUrl).then(showHumidity);
+
+  celciusTemperature = response.data.main.temp;
 }
 
 ///
@@ -100,3 +102,32 @@ function showIcon(response) {
     `http://openweathermap.org/img/wn/${icon}@2x.png`
   );
 }
+
+///
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celciusTemperature * 9) / 5 + 32;
+  //remove the active class from the celsius link
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+search("Copenhagen");
