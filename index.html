@@ -22,7 +22,7 @@
             <input type="city" id="city-input" placeholder="Search city" />
             <input type="submit" value="Search" />
           </form>
-          <button>Current location</button>
+
           <h1 class="border rounded shadow"></h1>
           <h2></h2>
 
@@ -32,13 +32,12 @@
               <strong>&#176;C</strong>
             </div>
             <div class="col-7">
-              Cloudy with periods of light rain.
+              <div id="weather-description"></div>
               <br />
               <ul>
-                <li>High 4&#176;C</li>
-                <li>Winds 21 km/h</li>
-                <li>Chance of rain 60%</li>
-                <li>Humidity 86%</li>
+                <li id="wind">Winds</li>
+                <li id="rain">Chance of rain 60%</li>
+                <li id="humidity"></li>
               </ul>
             </div>
           </div>
