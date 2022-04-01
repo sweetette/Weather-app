@@ -24,14 +24,15 @@
           </form>
           <div id="date"></div>
           <h1 class="border rounded shadow"></h1>
-          <h2></h2>
 
+          <br />
+          <br />
           <div class="row">
             <div class="col-2">
               <img src="" alt="clear" id="icon" />
             </div>
             <div class="col-3">
-              <strong id="current-temperature"></strong>
+              <strong class="temperature" id="current-temperature"></strong>
               <span class="units"
                 ><a href="#" id="celsius-link" class="nodecoration active"
                   >˚C</a
@@ -43,7 +44,7 @@
               >
             </div>
             <div class="col-7">
-              <div id="weather-description"></div>
+              <div class="weather-description" id="weather-description"></div>
               <br />
               <ul>
                 <li id="wind">Winds</li>
@@ -54,30 +55,20 @@
           </div>
           <br />
           <br />
-          <div class="row days">
-            <div class="col-2">
-              <div class="card">
-                <div class="card-body">Mon</div>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="card">
-                <div class="card-body">Tue</div>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="card">
-                <div class="card-body">Wed</div>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="card">
-                <div class="card-body">Thu</div>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="card">
-                <div class="card-body">Fri</div>
+
+          <div class="weatherforecast">
+            <div class="row-days">
+              <div class="col-2">
+                <div class="weather-forecast-date">Sat</div>
+                <img
+                  src="http://openweathermap.org/img/wn/50d@2x.png"
+                  alt=""
+                  width="42"
+                />
+                <div class="weather-forecast-temperature">
+                  <span class="weather-forecast-temperature-max">18</span>
+                  <span class="weather-forecast-temperature-min">12</span>
+                </div>
               </div>
             </div>
           </div>

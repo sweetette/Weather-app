@@ -5,10 +5,7 @@ h1 {
   padding: 20px;
   margin-inline-start: 1em;
   margin-inline-end: 1em;
-}
-h2 {
-  text-align: center;
-  padding: 40px;
+  text-transform: capitalize;
 }
 
 form {
@@ -39,10 +36,16 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
+.temperature {
+  font-size: 30px;
+}
 
 .col-7 {
   font-size: smaller;
   text-align: left;
+}
+.weather-description:first-letter {
+  text-transform: capitalize;
 }
 .row {
   position: relative;
@@ -74,4 +77,22 @@ li:first-letter {
 
 .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+  color: #000;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.weather-forecast-temperature {
+  font-size: 13px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
 }
