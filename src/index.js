@@ -22,11 +22,6 @@ let days = [
 let day = days[now.getDay()];
 date.innerHTML = `${day} ${hours}:${minutes}`;
 
-let cityInput = document.querySelector("#city-input");
-let cityInputValue = cityInput.value;
-let apiKey = "bbf5aa093fafae6856eb12399cd15947";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}&units=metric`;
-
 ///
 function search(event) {
   event.preventDefault();
@@ -36,23 +31,24 @@ function search(event) {
   let cityInputValue = cityInput.value;
   let apiKey = "bbf5aa093fafae6856eb12399cd15947";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(showAll);
+}
+
+function showAll(response) {
+  showTemperature(response);
+  showHumidity(response);
+  showWeatherDescription(response);
+  showWind(response);
+  showIcon(response);
 }
 
 let submitForm = document.querySelector("form");
 submitForm.addEventListener("submit", search);
 
 function showTemperature(response) {
-  let currentTemperature = Math.round(response.data.main.temp);
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = `${currentTemperature}`;
-  let cityInput = document.querySelector("#city-input");
-  let cityInputValue = cityInput.value;
-  let apiKey = "bbf5aa093fafae6856eb12399cd15947";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}`;
-  axios.get(apiUrl).then(showHumidity);
-
   celciusTemperature = response.data.main.temp;
+  fahrenheitTemperature = toFahrenheit(celciusTemperature);
+  updateTemperature();
 }
 
 ///
@@ -60,11 +56,6 @@ function showHumidity(response) {
   let currentHumidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `Humidity: ${currentHumidity}%`;
-  let cityInput = document.querySelector("#city-input");
-  let cityInputValue = cityInput.value;
-  let apiKey = "bbf5aa093fafae6856eb12399cd15947";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}`;
-  axios.get(apiUrl).then(showWind);
 }
 
 ///
@@ -72,11 +63,6 @@ function showWind(response) {
   let currentWind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `Wind: ${currentWind} m/s`;
-  let cityInput = document.querySelector("#city-input");
-  let cityInputValue = cityInput.value;
-  let apiKey = "bbf5aa093fafae6856eb12399cd15947";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}`;
-  axios.get(apiUrl).then(showWeatherDescription);
 }
 
 ///
@@ -86,11 +72,6 @@ function showWeatherDescription(response) {
     "#weather-description"
   );
   weatherDescriptionElement.innerHTML = `${currentWeather} `;
-  let cityInput = document.querySelector("#city-input");
-  let cityInputValue = cityInput.value;
-  let apiKey = "bbf5aa093fafae6856eb12399cd15947";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}`;
-  axios.get(apiUrl).then(showIcon);
 }
 
 ///
@@ -106,26 +87,42 @@ function showIcon(response) {
 ///
 function displayFahrenheitTemp(event) {
   event.preventDefault();
-  let fahrenheitTemp = (celciusTemperature * 9) / 5 + 32;
+  preferencesTemperature = "fahrenheit";
   //remove the active class from the celsius link
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  updateTemperature();
 }
 
 function displayCelsiusTemp(event) {
   event.preventDefault();
+  preferencesTemperature = "celcius";
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
+  updateTemperature();
 }
 
-let celciusTemperature = null;
+function updateTemperature() {
+  let currentTemperature = celciusTemperature;
+  if (preferencesTemperature === "fahrenheit") {
+    currentTemperature = fahrenheitTemperature;
+  }
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(currentTemperature);
+}
+
+function toFahrenheit(celciusT) {
+  return (celciusT * 9) / 5 + 32;
+}
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+// state of the application
+let celciusTemperature = 0;
+let fahrenheitTemperature = toFahrenheit(celciusTemperature);
+let preferencesTemperature = "celcius";
+let city = "Odense";
