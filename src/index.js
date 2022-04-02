@@ -20,7 +20,20 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-date.innerHTML = `${day} ${hours}:${minutes}`;
+date.innerHTML = `Last updated: ${day} ${hours}:${minutes}`;
+///
+
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "bbf5aa093fafae6856eb12399cd15947";
+  let apiAddress = "https://api.openweathermap.org/data/2.5/weather";
+  let apiUrl = `${apiAddress}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showAll);
+}
+
+navigator.geolocation.getCurrentPosition(showPosition);
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
