@@ -1,3 +1,13 @@
+body {
+  background: linear-gradient(
+    90.7deg,
+    rgb(255, 253, 218) 1.9%,
+    rgb(246, 210, 255) 39.3%,
+    rgb(152, 222, 254) 64.7%,
+    rgb(251, 255, 210) 100.8%
+  );
+}
+
 h1 {
   position: relative;
   top: 40px;
@@ -56,6 +66,7 @@ li:first-letter {
 .weather-app-wrapper {
   max-width: 500px;
   margin: 30px auto;
+  background-color: white;
 }
 .weather-app {
   max-width: 600px;
