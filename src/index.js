@@ -22,7 +22,7 @@ let days = [
 let day = days[now.getDay()];
 date.innerHTML = `${day} ${hours}:${minutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -48,7 +48,6 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-displayForecast();
 ///
 function search(event) {
   event.preventDefault();
@@ -67,6 +66,7 @@ function showAll(response) {
   showWeatherDescription(response);
   showWind(response);
   showIcon(response);
+  getForecast(response);
 }
 
 let submitForm = document.querySelector("form");
@@ -109,6 +109,13 @@ function showIcon(response) {
     "src",
     `http://openweathermap.org/img/wn/${icon}@2x.png`
   );
+}
+
+function getForecast(response) {
+  let coordinates = response.data.coord;
+  let apiUrl2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "bbf5aa093fafae6856eb12399cd15947";
+  axios.get(apiUrl2).then(displayForecast);
 }
 
 ///
