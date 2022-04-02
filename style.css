@@ -44,6 +44,10 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
+
+.btn:hover {
+  background-color: #cd9df4;
+}
 .temperature {
   font-size: 30px;
 }
