@@ -20,16 +20,17 @@
         <div class="weather-app">
           <form>
             <input type="city" id="city-input" placeholder="Search city" />
-            <input class="btn btn-outline-info" type="submit" value="Search" />
+            <input type="submit" value="Search" />
           </form>
           <div id="date"></div>
-          <h1 class="border rounded shadow"></h1>
+          <h1></h1>
 
           <br />
           <br />
           <div class="row">
             <div class="col-2">
-              <img src="" alt="clear" id="icon" />
+              <div class="weather-description" id="weather-description"></div>
+              <img alt="clear" id="icon" />
             </div>
             <div class="col-3">
               <strong class="temperature" id="current-temperature"></strong>
@@ -44,11 +45,9 @@
               >
             </div>
             <div class="col-7">
-              <div class="weather-description" id="weather-description"></div>
-
               <ul>
                 <li id="wind">Winds</li>
-                <li id="rain">Chance of rain 60%</li>
+                <li id="real-feel">Real feel:</li>
                 <li id="humidity"></li>
               </ul>
             </div>
