@@ -214,4 +214,4 @@ window.onload = function () {
 let celciusTemperature = 0;
 let forecast = null;
 let preferencesTemperature = "celcius";
-let cityName = "Odense";
+let cityName = "Your location";
