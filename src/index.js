@@ -17,7 +17,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let day = days[now.getDay()];
 date.innerHTML = `Last updated: ${day} ${hours}:${minutes}`;
@@ -103,6 +103,7 @@ function showAll(response) {
   showHumidity(response);
   showWeatherDescription(response);
   showWind(response);
+  showRealFeel(response);
   showIcon(response);
   getForecast(response);
 }
@@ -127,6 +128,13 @@ function showWind(response) {
   let currentWind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `Wind: ${currentWind} m/s`;
+}
+
+///
+function showRealFeel(response) {
+  let currentRealFeel = Math.round(response.data.main.feels_like);
+  let realFeelElement = document.querySelector("#real-feel");
+  realFeelElement.innerHTML = `Real feel: ${currentRealFeel}°C`;
 }
 
 ///
