@@ -1,4 +1,11 @@
+body {
+  font-family: "Merriweather Sans", sans-serif;
+}
+
 h1 {
+  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Permanent Marker", cursive;
+  font-size: 3rem;
   position: relative;
   top: 20px;
   text-align: center;
@@ -14,6 +21,10 @@ form {
   padding-top: 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .row {
   position: relative;
   text-align: center;
@@ -22,6 +33,9 @@ form {
 .temperature {
   font-size: 50px;
   text-align: right;
+  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Permanent Marker", cursive;
+  font-size: 3rem;
 }
 
 .units {
@@ -37,24 +51,30 @@ form {
 }
 
 .real-feel {
-  border: 1px solid #000;
+  border: 1px solid #cd9df4;
   border-radius: 100px;
   max-width: 100px;
   margin: 23px;
+  padding: 10px;
+  background-color: #cc9df4;
 }
 
 .humidity {
-  border: 1px solid #000;
+  border: 1px solid #cd9df4;
   border-radius: 100px;
   max-width: 100px;
   margin: 24px;
+  padding: 10px;
+  background-color: #fe87f5;
 }
 
 .wind {
-  border: 1px solid #000;
+  border: 2px solid #cd9df4;
   border-radius: 100px;
   max-width: 100px;
   margin: 23px;
+  padding: 10px;
+  background-color: #5ad1f3;
 }
 
 .weather-app-wrapper {

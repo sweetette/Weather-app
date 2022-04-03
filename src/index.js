@@ -127,7 +127,7 @@ function showHumidity(response) {
 function showWind(response) {
   let currentWind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = `Wind: ${currentWind} m/s`;
+  windElement.innerHTML = `Wind: <br /> ${currentWind} m/s`;
 }
 
 ///
