@@ -54,7 +54,7 @@ a {
   border: 1px solid #cd9df4;
   border-radius: 100px;
   max-width: 100px;
-  margin: 23px;
+  margin: 5px;
   padding: 10px;
   background-color: #cc9df4;
 }
@@ -63,7 +63,7 @@ a {
   border: 1px solid #cd9df4;
   border-radius: 100px;
   max-width: 100px;
-  margin: 24px;
+  margin: 5px;
   padding: 10px;
   background-color: #fe87f5;
 }
@@ -72,13 +72,13 @@ a {
   border: 2px solid #cd9df4;
   border-radius: 100px;
   max-width: 100px;
-  margin: 23px;
+  margin: 5px;
   padding: 10px;
   background-color: #5ad1f3;
 }
 
 .weather-app-wrapper {
-  max-width: 500px;
+  max-width: 400px;
   margin: 40px auto;
   border: 3px solid #cd9df4;
   border-radius: 5px;
@@ -86,7 +86,7 @@ a {
   background-color: #5ad1f3;
 }
 .weather-app {
-  max-width: 500px;
+  max-width: 400px;
   padding: 20px;
   border: 3px solid #cd9df4;
   border-radius: 5px;
