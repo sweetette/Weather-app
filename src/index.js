@@ -21,7 +21,6 @@ let days = [
 ];
 let day = days[now.getDay()];
 date.innerHTML = `Last updated: ${day} ${hours}:${minutes}`;
-///
 
 function showPosition(position) {
   let lat = position.coords.latitude;
@@ -82,7 +81,6 @@ function updateForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-///
 function search(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
@@ -116,28 +114,24 @@ function showTemperature(response) {
   updateTemperature();
 }
 
-///
 function showHumidity(response) {
   let currentHumidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `Humidity: ${currentHumidity}%`;
 }
 
-///
 function showWind(response) {
   let currentWind = Math.round(response.data.wind.speed);
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `Wind: <br /> ${currentWind} m/s`;
 }
 
-///
 function showRealFeel(response) {
   let currentRealFeel = Math.round(response.data.main.feels_like);
   let realFeelElement = document.querySelector("#real-feel");
   realFeelElement.innerHTML = `Real feel: ${currentRealFeel}°C`;
 }
 
-///
 function showWeatherDescription(response) {
   let currentWeather = response.data.weather[0].description;
   let weatherDescriptionElement = document.querySelector(
@@ -146,7 +140,6 @@ function showWeatherDescription(response) {
   weatherDescriptionElement.innerHTML = `${currentWeather} `;
 }
 
-///
 function showIcon(response) {
   let icon = response.data.weather[0].icon;
   let iconElement = document.querySelector("#icon");
@@ -163,7 +156,6 @@ function getForecast(response) {
   axios.get(apiUrl2).then(displayForecast);
 }
 
-///
 function displayFahrenheitTemp(event) {
   event.preventDefault();
   preferencesTemperature = "fahrenheit";
